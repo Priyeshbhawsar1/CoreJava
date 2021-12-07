@@ -77,6 +77,8 @@ public class EmpController {
 				}
 				break;
 			case 3:
+				
+				boolean found= false;
 				System.out.println("Enter serach the employee id");
 				long searchid2 = sc.nextLong();
 				li = al.listIterator();
@@ -84,10 +86,16 @@ public class EmpController {
 					Employee e = (Employee) li.next();
 					if (e.getId() == searchid2) {
 						System.out.println(e.toString());
-					} else {
-						System.out.println("record not found");
+						found=true;
+						break;
 					}
 				}
+					if(found)
+						System.out.println("record found");
+					else {
+						System.out.println("record not found");
+					}
+				
 				break;
 			case 4:
 				// Display all the Employee Records
